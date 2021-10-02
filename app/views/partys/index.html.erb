@@ -2,8 +2,13 @@
 
 <ul>
   <% @partys.each do |party| %>
-    <li>
-      <%= party.name %>
-    </li>
+ 
+
+
+     <a href="/partys/<%= party.id %>">
+        <%= party.name %>
+      </a>
+
+
   <% end %>
 </ul>
