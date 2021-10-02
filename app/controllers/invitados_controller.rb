@@ -1,8 +1,12 @@
 class InvitadosController < ApplicationController
+  
+  #READ
+  
   def index
        @invitados = Invitado.all
   end
   
+  # CREATE NEW
   
   def new
     @invitado = Invitado.new
@@ -17,6 +21,25 @@ class InvitadosController < ApplicationController
       render :new
     end
   end
+  
+  #UPDATE AND EDIT
+  
+  def edit
+    @invitado = Invitado.find(params[:id])
+  end
+
+  def update
+    @invitado = Invitado.find(params[:id])
+
+    if @invitado.update(invitado_params)
+      redirect_to action: "index"
+    else
+      render :edit
+    end
+  end
+  
+  
+  
   
   private
      def invitado_params

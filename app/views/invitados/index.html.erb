@@ -22,7 +22,9 @@ tr:nth-child(even) {
 
   <a href="/partys/"><h4>Grupos</h4></a>
 
-  <button type="button"  onClick="location.href='/invitados/new'"">Agregar invitado</button><br>
+  <button type="button"  onClick="location.href='/invitados/new'"">Agregar invitado</button>
+
+  
   <table>
   <tr>
     <th>Nombre</th>
@@ -51,7 +53,19 @@ tr:nth-child(even) {
     </td>
     <td>
       <%= invitado.phone%>
-    </td></tr>
+    </td>
+
+    <td>
+     
+     <button type="button"  onClick="location.href='/invitados/<%= invitado.id%>/edit'"">Editar invitado</button>
+     </td>
+
+     
+
+
+
+
+</tr>
   <% end %>
   
 </table>
