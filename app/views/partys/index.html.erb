@@ -3,12 +3,10 @@
 <ul>
   <% @partys.each do |party| %>
  
+ <li>
 
+     <%= link_to party.name, party %>
 
-     <a href="/partys/<%= party.id %>">
-        <%= party.name %>
-      </a>
-
-
+</li>
   <% end %>
 </ul>
