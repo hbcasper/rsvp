@@ -1,0 +1,57 @@
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<h1>Invitados</h1>
+
+
+
+  
+
+  <table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Grupo</th>
+    <th>Asistencia</th>
+    <th>Email</th>
+    <th>Telefono</th>
+  </tr>
+  <tr>
+  	<% @invitados.each do |invitado| %>
+    <td>
+      <%= invitado.first_name %>
+    </td>
+    <td>
+      <%= invitado.last_name %>
+    </td>
+    <td>
+      <%= invitado.group%>
+    </td>
+    <td>
+      <%= invitado.isgoing%>
+    </td>
+    <td>
+      <%= invitado.email%>
+    </td>
+    <td>
+      <%= invitado.phone%>
+    </td>
+  <% end %>
+  </tr>
+</table>
+
