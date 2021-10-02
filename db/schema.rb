@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_02_030922) do
+ActiveRecord::Schema.define(version: 2021_10_02_033451) do
 
   create_table "invitados", force: :cascade do |t|
     t.string "first_name"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2021_10_02_030922) do
     t.integer "phone"
     t.string "email"
     t.boolean "isgoing"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.string "name"
+    t.boolean "invite_sent"
+    t.integer "people_invited"
+    t.integer "people_going"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
