@@ -1,9 +1,11 @@
 class InvitadosController < ApplicationController
+    
   
   #READ
   
   def index
        @invitados = Invitado.all
+        @partys = Party.all
   end
   
   # CREATE NEW
@@ -13,13 +15,17 @@ class InvitadosController < ApplicationController
   end
 
   def create
-    @invitado = Invitado.new(invitado_params)
+      
+      @party = Party.find(params[:party_id])
+      
+      @invitado = @party.invitados.create(invitado_params)
+      redirect_to party_path(@party)
 
-    if @invitado.save
-      redirect_to action: "index"
-    else
-      render :new
-    end
+    #if @invitado.save
+      #redirect_to action: "index"
+    #else
+      #render :new
+    #end
   end
   
   #UPDATE AND EDIT

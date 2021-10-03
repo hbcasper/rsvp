@@ -1,3 +1,30 @@
 <h1><%= @party.name %></h1>
 <h2>People invited</h2>
-<h3><%= @party.people_invited %></h3>
+
+<h2>Invitados</h2>
+
+
+<% @party.invitados.each do |invitado| %>
+  <p>
+    
+    <%= invitado.first_name %>
+
+    <%= invitado.last_name %>
+  </p>
+<% end %>
+
+
+<h2>Agregar invitado:</h2>
+<%= form_with model: [ @party, @party.invitados.build ] do |form| %>
+  <p>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %>
+  </p>
+  <p>
+    <%= form.label :last_name %><br>
+    <%= form.text_field :last_name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

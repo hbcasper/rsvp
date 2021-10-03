@@ -43,7 +43,7 @@ tr:nth-child(even) {
       <%= invitado.last_name %>
     </td>
     <td>
-      <%= invitado.group%>
+      <%= invitado.party_id%>
     </td>
     <td>
       <%= invitado.isgoing%>
@@ -60,8 +60,7 @@ tr:nth-child(even) {
      <button type="button"  onClick="location.href='/invitados/<%= invitado.id%>/edit'"">Editar invitado</button>
 
 
-<%= button_to "Eliminar", invitado_path(invitado),
-                                method: :delete, data: { confirm: "Are you sure?" } %>
+    
 
     
 
@@ -73,7 +72,7 @@ tr:nth-child(even) {
 
 
 </tr>
-  <% end %>
+ <% end %>
   
 </table>
 
