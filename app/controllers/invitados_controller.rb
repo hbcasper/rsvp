@@ -38,6 +38,13 @@ class InvitadosController < ApplicationController
     end
   end
   
+  def destroy
+     @invitado = Invitado.find(params[:id])
+     @invitado.destroy
+
+     redirect_to root_path
+   end
+  
   
   
   
