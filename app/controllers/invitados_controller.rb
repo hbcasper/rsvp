@@ -45,10 +45,11 @@ class InvitadosController < ApplicationController
   end
   
   def destroy
-     @invitado = Invitado.find(params[:id])
-     @invitado.destroy
-
-     redirect_to root_path
+      
+      @party = Party.find(params[:party_id])
+      @invitado = @party.invitados.find(params[:id])
+      @invitado.destroy
+      redirect_to root_path
    end
   
   

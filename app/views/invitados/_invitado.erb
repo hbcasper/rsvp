@@ -1,0 +1,12 @@
+
+  <p>
+    
+    <%= invitado.first_name %>
+
+    <%= invitado.last_name %>
+  </p>
+<p>
+  <%= link_to 'Destroy invitado', [@party, @party.invitado],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+</p>
